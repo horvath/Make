@@ -24,7 +24,7 @@
 	// Camera
 	self.imgPicker = [[UIImagePickerController alloc] init];
 	self.imgPicker.allowsImageEditing = YES;
-	self.imgPicker.delegate = self;
+	//self.imgPicker.delegate = self;
 	
 
 	// Table
