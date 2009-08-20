@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "TouchXML.h"
+#import "AsyncImageView.h"
 
 @interface OnlineViewController : UITableViewController {
     // This is the outlet for the blog view, it will allow the data from the controller to be used in a view

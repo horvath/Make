@@ -24,7 +24,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
 	if (self = [super initWithCoder:aDecoder]) {
-		[self setBackgroundImage:[UIImage imageNamed:@"NavigationBar.png"]];
+		//[self setBackgroundImage:[UIImage imageNamed:@"NavigationBar.png"]];
 	}
 	return self;
 }

@@ -1,5 +1,6 @@
 #import "MakeAppDelegate.h"
 #import "OnlineViewController.h"
+#import "BlogDetailViewController.h"
 
 @implementation OnlineViewController
 
@@ -34,10 +35,10 @@
         int counter;
 		
         // Loop through the children of the current  node
-        for(counter = 0; counter < [resultElement childCount]; counter++) {
-			
+        for(counter = 0; counter < [resultElement childCount]; counter++) {			
             // Add each field to the blogItem Dictionary with the node name as key and node value as the value
-            [blogItem setObject:[[resultElement childAtIndex:counter] stringValue] forKey:[[resultElement childAtIndex:counter] name]];
+            if ([[resultElement childAtIndex:counter] stringValue] != nil)
+			[blogItem setObject:[[resultElement childAtIndex:counter] stringValue] forKey:[[resultElement childAtIndex:counter] name]];
         }
 		
         // Add the blogItem to the global blogEntries Array so that the view can access it.
@@ -59,17 +60,34 @@
     static NSInteger titleTag = 1;
 	static NSInteger descTag = 2;
 	static NSInteger dateTag = 3;	
-    
-	
+    	
     static NSString *CellIdentifier = @"Cell";
-    
+
+	// AsyncImage
+	#define ASYNC_IMAGE_TAG 9999
+	#define LABEL_TAG 8888    	
+	AsyncImageView *asyncImageView = nil;
+	
+	// TableView
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
 		[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];		
 
 		CGRect frame;
-		frame.origin.x = 8; frame.origin.y = 5;
+		
+		// Image
+        frame.origin.x = 0;
+        frame.origin.y = 0;
+        frame.size.width = 60;
+        frame.size.height = 60;
+		
+        asyncImageView = [[[AsyncImageView alloc] initWithFrame:frame] autorelease];
+        asyncImageView.tag = ASYNC_IMAGE_TAG;		
+        [cell.contentView addSubview:asyncImageView];		
+
+		// Labels
+		frame.origin.x += 65; frame.origin.y += 5;
 		frame.size.height = 18; frame.size.width = 221;		
 		
 		UILabel *storyTitle = [[UILabel alloc] initWithFrame:frame];
@@ -94,21 +112,35 @@
 		storyDate.tag = dateTag;
 		[cell.contentView addSubview:storyDate];
 		[storyDate release];	
+	} else {
+        asyncImageView = (AsyncImageView *) [cell.contentView viewWithTag:ASYNC_IMAGE_TAG];
 	}
-    
+
+	int blogEntryIndex = [indexPath indexAtPosition: [indexPath length] -1];	
 	
+    // Image
+	NSLog(@"String is %@", [[blogEntries objectAtIndex: blogEntryIndex] objectForKey: @"thumbnail"]);	
+	
+	NSString *urlString = [[blogEntries objectAtIndex: blogEntryIndex] objectForKey: @"thumbnail"];
+	
+	NSURL *url;
+	
+	if (urlString == NULL) {
+		url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource: @"Thumbnail" ofType: @"png"]];
+		[asyncImageView loadImageFromURL:url];
+	} else if (urlString != NULL) {
+		url = [NSURL URLWithString:urlString];		
+		[asyncImageView loadImageFromURL:url];	
+	}
+	
+	// Labels
 	UILabel *storyTitle = (UILabel *) [cell.contentView viewWithTag:titleTag];
 	UILabel *storyDesc = (UILabel *) [cell.contentView viewWithTag:descTag];
 	UILabel *storyDate = (UILabel *) [cell.contentView viewWithTag:dateTag];	
 	
-    // Set up the cell
-	int blogEntryIndex = [indexPath indexAtPosition: [indexPath length] -1];
-
-	//[cell setText:[[blogEntries objectAtIndex: blogEntryIndex] objectForKey: @"title"]];		
-	
+    // Set up the cell		
 	storyTitle.text = [[blogEntries objectAtIndex: blogEntryIndex] objectForKey: @"title"];
 	storyDesc.text = [[blogEntries objectAtIndex: blogEntryIndex] objectForKey: @"lofi"];
-
 	
 	// Clean up date
 	NSString *storyDateText = [[blogEntries objectAtIndex: blogEntryIndex] objectForKey: @"pubDate"];	
@@ -140,10 +172,24 @@
 	return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {	
+	
+	int storyIndex = [indexPath indexAtPosition: [indexPath length] - 1];		
+					
+	BlogDetailViewController *blogDetailView = [[BlogDetailViewController alloc] init];
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic -- create and push a new view controller
+	// Push vars
+	blogDetailView.detailHeader = [[blogEntries objectAtIndex: storyIndex] objectForKey: @"title"];
+	blogDetailView.detailBody = [[blogEntries objectAtIndex: storyIndex] objectForKey: @"hifi"];
+	blogDetailView.detailPubDate = [[blogEntries objectAtIndex: storyIndex] objectForKey: @"pubDate"];
+	blogDetailView.detailAuthor = [[blogEntries objectAtIndex: storyIndex] objectForKey: @"author"];
+	blogDetailView.detailCategory = [[blogEntries objectAtIndex: storyIndex] objectForKey: @"category"];
+	
+	[self.navigationController pushViewController:blogDetailView animated:YES];
+	 
+	 [blogDetailView release];		
 }
+
 
 
 /*

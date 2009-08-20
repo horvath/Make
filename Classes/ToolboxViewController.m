@@ -4,6 +4,7 @@
 
 #import "ToolboxViewController.h"
 #import "FlickrViewController.h"
+#import "CalcViewController.h"
 
 @implementation ToolboxViewController
 
@@ -20,12 +21,6 @@
 }
 
 - (void)viewDidLoad {
-
-	// Camera
-	self.imgPicker = [[UIImagePickerController alloc] init];
-	self.imgPicker.allowsImageEditing = YES;
-	//self.imgPicker.delegate = self;
-	
 
 	// Table
 	NSDictionary *row1 = [[NSDictionary alloc] initWithObjectsAndKeys:
@@ -142,26 +137,22 @@
 		
 	} else if (toolIndex == 1) {
 
-		/*FlickrViewController *flickrView = [[FlickrViewController alloc] init];
+		FlickrViewController *flickrView = [[FlickrViewController alloc] initWithNibName:@"FlickrViewController" bundle:[NSBundle mainBundle]];
 		[self.navigationController pushViewController:flickrView animated:YES];
-		
-		[flickrView release];			*/
 
-		 FlickrViewController *flickrView = [[FlickrViewController alloc] initWithNibName:@"FlickrViewController" bundle:[NSBundle mainBundle]];
-		 [self.navigationController pushViewController:flickrView animated:YES];
-		 
-		 [flickrView release];			
-		
-		
-
-		
-		
+		[flickrView release];			
+					
 		UIBarButtonItem *button = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera
 																				 target:self
 																				 action:@selector(dialogOKCancelAction:)] autorelease];
 		[flickrView.navigationItem setRightBarButtonItem:button animated:YES];		
 		
 	} else if (toolIndex == 2) {
+
+		CalcViewController *calcView = [[CalcViewController alloc] init];
+		[self.navigationController pushViewController:calcView animated:YES];
+		 
+		 [calcView release];			
 		
 	} else if (toolIndex == 3) {
 		
@@ -214,10 +205,6 @@
 		[self.toolTable deselectRowAtIndexPath:selection animated:YES];
 	
 	[self.toolTable reloadData];
-}
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)img editingInfo:(NSDictionary *)editInfo {
-	[[picker parentViewController] dismissModalViewControllerAnimated:YES];
 }
 
 - (void)dealloc
