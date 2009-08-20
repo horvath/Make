@@ -22,7 +22,7 @@
 		D055B6D31032602000474D05 /* LCImageDownloadQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D055B6D01032602000474D05 /* LCImageDownloadQueue.m */; };
 		D055B6D41032602000474D05 /* LCURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D055B6D21032602000474D05 /* LCURLConnection.m */; };
 		D055B6D71032604900474D05 /* FlickrViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D055B6D61032604900474D05 /* FlickrViewController.m */; };
-		D055B6DA1032608600474D05 /* FlickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D055B6D91032608600474D05 /* FlickerViewController.xib */; };
+		D055B6DA1032608600474D05 /* FlickrViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D055B6D91032608600474D05 /* FlickrViewController.xib */; };
 		D06155FD102DF2850079E04B /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D06155FC102DF2850079E04B /* ConnectViewController.m */; };
 		D074C9370FDDE0B3009F6D01 /* tabVideos.png in Resources */ = {isa = PBXBuildFile; fileRef = D074C9330FDDE0B3009F6D01 /* tabVideos.png */; };
 		D074C9380FDDE0B3009F6D01 /* tabOnline.png in Resources */ = {isa = PBXBuildFile; fileRef = D074C9340FDDE0B3009F6D01 /* tabOnline.png */; };
@@ -48,6 +48,12 @@
 		D09B5921102A13D5000658BC /* toolProjects.png in Resources */ = {isa = PBXBuildFile; fileRef = D09B591F102A13D5000658BC /* toolProjects.png */; };
 		D09B5922102A13D5000658BC /* toolCalculator.png in Resources */ = {isa = PBXBuildFile; fileRef = D09B5920102A13D5000658BC /* toolCalculator.png */; };
 		D09B592F102A1435000658BC /* toolArduino.png in Resources */ = {isa = PBXBuildFile; fileRef = D09B592E102A1435000658BC /* toolArduino.png */; };
+		D0C2C72C103B4DE9008A51BE /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C2C72B103B4DE9008A51BE /* AsyncImageView.m */; };
+		D0C2C885103B55FC008A51BE /* ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C2C882103B55FC008A51BE /* ImageCache.m */; };
+		D0C2C886103B55FC008A51BE /* ImageCacheObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C2C884103B55FC008A51BE /* ImageCacheObject.m */; };
+		D0C2C8EC103B7F73008A51BE /* Thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C2C8EB103B7F73008A51BE /* Thumbnail.png */; };
+		D0C2C934103B99BC008A51BE /* BlogDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C2C933103B99BC008A51BE /* BlogDetailViewController.m */; };
+		D0C2C9CB103C9C5D008A51BE /* CalcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C2C9CA103C9C5D008A51BE /* CalcViewController.m */; };
 		D0C700051034701D00BAB75D /* NavigationBar.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C700041034701D00BAB75D /* NavigationBar.png */; };
 		D0C70021103473F800BAB75D /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C70020103473F800BAB75D /* VideosViewController.m */; };
 		D0C7FFF510346ECD00BAB75D /* CustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C7FFF410346ECD00BAB75D /* CustomNavigationBar.m */; };
@@ -80,7 +86,7 @@
 		D055B6D21032602000474D05 /* LCURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCURLConnection.m; sourceTree = "<group>"; };
 		D055B6D51032604900474D05 /* FlickrViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrViewController.h; sourceTree = "<group>"; };
 		D055B6D61032604900474D05 /* FlickrViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrViewController.m; sourceTree = "<group>"; };
-		D055B6D91032608600474D05 /* FlickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlickerViewController.xib; sourceTree = "<group>"; };
+		D055B6D91032608600474D05 /* FlickrViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlickrViewController.xib; sourceTree = "<group>"; };
 		D06155FB102DF2850079E04B /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectViewController.h; sourceTree = "<group>"; };
 		D06155FC102DF2850079E04B /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
 		D074C9330FDDE0B3009F6D01 /* tabVideos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabVideos.png; sourceTree = "<group>"; };
@@ -119,6 +125,17 @@
 		D09B591F102A13D5000658BC /* toolProjects.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolProjects.png; sourceTree = "<group>"; };
 		D09B5920102A13D5000658BC /* toolCalculator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolCalculator.png; sourceTree = "<group>"; };
 		D09B592E102A1435000658BC /* toolArduino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolArduino.png; sourceTree = "<group>"; };
+		D0C2C72A103B4DE9008A51BE /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		D0C2C72B103B4DE9008A51BE /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		D0C2C881103B55FC008A51BE /* ImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCache.h; sourceTree = "<group>"; };
+		D0C2C882103B55FC008A51BE /* ImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCache.m; sourceTree = "<group>"; };
+		D0C2C883103B55FC008A51BE /* ImageCacheObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCacheObject.h; sourceTree = "<group>"; };
+		D0C2C884103B55FC008A51BE /* ImageCacheObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCacheObject.m; sourceTree = "<group>"; };
+		D0C2C8EB103B7F73008A51BE /* Thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Thumbnail.png; sourceTree = "<group>"; };
+		D0C2C932103B99BC008A51BE /* BlogDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogDetailViewController.h; sourceTree = "<group>"; };
+		D0C2C933103B99BC008A51BE /* BlogDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogDetailViewController.m; sourceTree = "<group>"; };
+		D0C2C9C9103C9C5D008A51BE /* CalcViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalcViewController.h; sourceTree = "<group>"; };
+		D0C2C9CA103C9C5D008A51BE /* CalcViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalcViewController.m; sourceTree = "<group>"; };
 		D0C700041034701D00BAB75D /* NavigationBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavigationBar.png; sourceTree = "<group>"; };
 		D0C7001F103473F800BAB75D /* VideosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosViewController.h; sourceTree = "<group>"; };
 		D0C70020103473F800BAB75D /* VideosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosViewController.m; sourceTree = "<group>"; };
@@ -175,6 +192,7 @@
 			children = (
 				D082EC3310338AEB00B019A0 /* TouchXML */,
 				D055B6CE1032602000474D05 /* JSON */,
+				D0C2C647103A3233008A51BE /* AsyncImage */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -201,7 +219,7 @@
 				D09B58DA102A0A38000658BC /* Tools */,
 				D074C93B0FDDE0BB009F6D01 /* Tabs */,
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
-				D055B6D91032608600474D05 /* FlickerViewController.xib */,
+				D055B6D91032608600474D05 /* FlickrViewController.xib */,
 				D082EB711033207400B019A0 /* LoadingView.xib */,
 				8D1107310486CEB800E47090 /* Make-Info.plist */,
 			);
@@ -288,6 +306,7 @@
 				D082ED091033953A00B019A0 /* Default.png */,
 				D082ED8F10339F4A00B019A0 /* Icon.png */,
 				D0C700041034701D00BAB75D /* NavigationBar.png */,
+				D0C2C8EB103B7F73008A51BE /* Thumbnail.png */,
 				D082EB761033219A00B019A0 /* LoadingView.png */,
 			);
 			name = Common;
@@ -298,6 +317,10 @@
 			children = (
 				D0C7FFF310346ECD00BAB75D /* CustomNavigationBar.h */,
 				D0C7FFF410346ECD00BAB75D /* CustomNavigationBar.m */,
+				D0C2C932103B99BC008A51BE /* BlogDetailViewController.h */,
+				D0C2C933103B99BC008A51BE /* BlogDetailViewController.m */,
+				D0C2C9C9103C9C5D008A51BE /* CalcViewController.h */,
+				D0C2C9CA103C9C5D008A51BE /* CalcViewController.m */,
 				D055B6D51032604900474D05 /* FlickrViewController.h */,
 				D055B6D61032604900474D05 /* FlickrViewController.m */,
 				D082ED9410339FB700B019A0 /* TalkViewController.h */,
@@ -317,6 +340,20 @@
 				D09B5906102A11BB000658BC /* toolClinometer.png */,
 			);
 			name = Tools;
+			sourceTree = "<group>";
+		};
+		D0C2C647103A3233008A51BE /* AsyncImage */ = {
+			isa = PBXGroup;
+			children = (
+				D0C2C72A103B4DE9008A51BE /* AsyncImageView.h */,
+				D0C2C72B103B4DE9008A51BE /* AsyncImageView.m */,
+				D0C2C881103B55FC008A51BE /* ImageCache.h */,
+				D0C2C882103B55FC008A51BE /* ImageCache.m */,
+				D0C2C883103B55FC008A51BE /* ImageCacheObject.h */,
+				D0C2C884103B55FC008A51BE /* ImageCacheObject.m */,
+			);
+			name = AsyncImage;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,12 +415,13 @@
 				D03F13B4102DF3A0002A60F2 /* connectCommunity.png in Resources */,
 				D03F13B5102DF3A0002A60F2 /* connectMap.png in Resources */,
 				D03F13B6102DF3A0002A60F2 /* connectMagazine.png in Resources */,
-				D055B6DA1032608600474D05 /* FlickerViewController.xib in Resources */,
+				D055B6DA1032608600474D05 /* FlickrViewController.xib in Resources */,
 				D082EB721033207400B019A0 /* LoadingView.xib in Resources */,
 				D082EB771033219A00B019A0 /* LoadingView.png in Resources */,
 				D082ED0A1033953A00B019A0 /* Default.png in Resources */,
 				D082ED9010339F4A00B019A0 /* Icon.png in Resources */,
 				D0C700051034701D00BAB75D /* NavigationBar.png in Resources */,
+				D0C2C8EC103B7F73008A51BE /* Thumbnail.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +453,11 @@
 				D082ED9610339FB700B019A0 /* TalkViewController.m in Sources */,
 				D0C7FFF510346ECD00BAB75D /* CustomNavigationBar.m in Sources */,
 				D0C70021103473F800BAB75D /* VideosViewController.m in Sources */,
+				D0C2C72C103B4DE9008A51BE /* AsyncImageView.m in Sources */,
+				D0C2C885103B55FC008A51BE /* ImageCache.m in Sources */,
+				D0C2C886103B55FC008A51BE /* ImageCacheObject.m in Sources */,
+				D0C2C934103B99BC008A51BE /* BlogDetailViewController.m in Sources */,
+				D0C2C9CB103C9C5D008A51BE /* CalcViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
