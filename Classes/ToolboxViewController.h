@@ -16,5 +16,6 @@
 
 @property (nonatomic, retain) NSArray * toolBox;
 @property (nonatomic, retain) UITableView * toolTable;
-@property (nonatomic, retain) UIImagePickerController *imgPicker;
+@property (nonatomic, retain) UIImagePickerController * imgPicker;
+
 @end

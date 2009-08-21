@@ -129,10 +129,10 @@
 	} else if (toolIndex == 1) {
 		
 	} else if (toolIndex == 2) {
-		 TalkViewController *talkView = [[TalkViewController alloc] init];
-		 [self.navigationController pushViewController:talkView animated:YES];
-		 
-		 [talkView release];			
+		TalkViewController *talkView = [[TalkViewController alloc] init];
+		[self.navigationController pushViewController:talkView animated:YES];
+		
+		[talkView release];			
 	} else if (toolIndex == 3) {
 		
 	} else if (toolIndex == 4) {

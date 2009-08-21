@@ -14,6 +14,9 @@
 
 - (void)loadView {
 	toolTable = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame] style:UITableViewStylePlain];
+
+	toolTable.separatorStyle = UITableViewCellSeparatorStyleNone;	
+	
 	toolTable.delegate = self;
 	toolTable.dataSource = self;
 
@@ -24,19 +27,21 @@
 
 	// Table
 	NSDictionary *row1 = [[NSDictionary alloc] initWithObjectsAndKeys:
-						  @"Arduino connector",  @"First", @"View input / output data from Arduino", @"Second", nil];
+						  @"Arduino connector",  @"First", @"Interface with physical devices", @"Second", nil];
 	NSDictionary *row2 = [[NSDictionary alloc] initWithObjectsAndKeys:
-						  @"Documentation camera",  @"First", @"Browse & upload photos to Flickr pool", @"Second", nil];
+						  @"Flickr camera",  @"First", @"Browse & upload to Make's pool", @"Second", nil];
 	NSDictionary *row3 = [[NSDictionary alloc] initWithObjectsAndKeys:
-						  @"Pocket reference",  @"First", @"Codes, measurements, laws, charts, etc.", @"Second", nil];
+						  @"Pocket reference",  @"First", @"Codes, measurements, charts, etc.", @"Second", nil];
 	NSDictionary *row4 = [[NSDictionary alloc] initWithObjectsAndKeys:
-						  @"Projects",  @"First", @"Featured projects from Instructables", @"Second", nil];
-	NSDictionary *row5 = [[NSDictionary alloc] initWithObjectsAndKeys:
 						  @"Electronics calculator",  @"First", @"LEDs, resistors and capacitors", @"Second", nil];
+	NSDictionary *row5 = [[NSDictionary alloc] initWithObjectsAndKeys:
+						  @"Maker's notebook",  @"First", @"Document and sketch your projects", @"Second", nil];
 	NSDictionary *row6 = [[NSDictionary alloc] initWithObjectsAndKeys:
 						  @"Clinometer",  @"First", @"Measures incline and level", @"Second", nil];
+	NSDictionary *row7 = [[NSDictionary alloc] initWithObjectsAndKeys:
+						  @"Projects",  @"First", @"Featured projects from Instructables", @"Second", nil];
 		
-	NSArray *array = [[NSArray alloc] initWithObjects:row1, row2, row3, row4, row5, row6, nil];
+	NSArray *array = [[NSArray alloc] initWithObjects:row1, row2, row3, row4, row5, row6, row7, nil];
 	
 	self.toolBox = array;
 	
@@ -46,6 +51,7 @@
 	[row4 release];	
 	[row5 release];	
 	[row6 release];		
+	[row7 release];
 	[array release];
 }
 
@@ -69,42 +75,47 @@
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
 	
 	if (cell == nil) {
-		CGRect cellFrame = CGRectMake(30, 0, 300, 65);
+
+		CGRect cellFrame;
 		
-		cell = [[[UITableViewCell alloc] initWithFrame: cellFrame reuseIdentifier: CellTableIdentifier] autorelease];
-		[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];		
+        cellFrame.origin.x = 0;
+        cellFrame.origin.y = 0;
+        cellFrame.size.width = 300;
+        cellFrame.size.height = 65;
 		
-		CGRect toolTitleRect = CGRectMake(45, 10, 260, 17);
-		UILabel *toolTitle = [[UILabel alloc] initWithFrame:toolTitleRect];
-		toolTitle.tag = firstValueTag;
-		[cell.contentView addSubview:toolTitle];
-		[toolTitle release];
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellTableIdentifier] autorelease];
 		
-		CGRect descValueRect = CGRectMake(45, 29, 260, 17);
-		UILabel *descValue = [[UILabel alloc] initWithFrame:descValueRect];
-		descValue.tag = secValueTag;
-		[cell.contentView addSubview:descValue];		
-		[descValue release];
+		UIImage *indicatorImage = [UIImage imageNamed:@"Indicator.png"];
+		cell.accessoryView = [[[UIImageView alloc] initWithImage:indicatorImage] autorelease];		
+		
+
+
+
+		cell.backgroundView = [[[UIImageView alloc] init] autorelease];
+		cell.selectedBackgroundView = [[[UIImageView alloc] init] autorelease];	
 	}
 	
-
-
+	//cell.contentView.backgroundColor = [UIColor darkGrayColor];
+	
+	
+	UIImage *rowBackground;
+	UIImage *selectionBackground;
+	
+	rowBackground = [UIImage imageNamed:@"CellBackground.png"];
+	selectionBackground = [UIImage imageNamed:@"CellBackgroundSelected.png"];
+	
+	
+	
+	((UIImageView *)cell.backgroundView).image = rowBackground;	
+	((UIImageView *)cell.selectedBackgroundView).image = selectionBackground;		
+	
 	NSDictionary *rowData = [self.toolBox objectAtIndex:row];
+
 	
-	UILabel *toolTitle = (UILabel *)[cell.contentView viewWithTag:firstValueTag];
-	UILabel *descValue = (UILabel *)[cell.contentView viewWithTag:secValueTag];
+	cell.textLabel.text = [rowData objectForKey:@"First"];
+	cell.detailTextLabel.text = [rowData objectForKey:@"Second"];
 	
-	//UIColor *darkGray= [UIColor colorWithRed:25.0/255.0 green:25.0/255.0 blue:25.0/255.0 alpha:1.0];  
-	
-	toolTitle.text = [rowData objectForKey:@"First"];
-	descValue.text = [rowData objectForKey:@"Second"];
-	
-	toolTitle.font = [UIFont boldSystemFontOfSize:16];	
-	descValue.font = [UIFont systemFontOfSize:13];	
-	
-	// Selection
-	toolTitle.highlightedTextColor = [UIColor whiteColor];
-	descValue.highlightedTextColor = [UIColor whiteColor];	
+
 	
 	if (row == 0) {
 		UIImage *image = [UIImage imageNamed:@"toolArduino.png"];
@@ -116,15 +127,20 @@
 		UIImage *image = [UIImage imageNamed:@"toolReference.png"];
 		cell.imageView.image = image;	
 	} else if (row == 3) {
-		UIImage *image = [UIImage imageNamed:@"toolProjects.png"];
+		UIImage *image = [UIImage imageNamed:@"toolCalculator.png"];
 		cell.imageView.image = image;	
 	} else if (row == 4) {
-		UIImage *image = [UIImage imageNamed:@"toolCalculator.png"];
+		UIImage *image = [UIImage imageNamed:@"toolNotebook.png"];
 		cell.imageView.image = image;
 	} else if (row == 5) {
 		UIImage *image = [UIImage imageNamed:@"toolClinometer.png"];
+		cell.imageView.image = image;		
+	} else if (row == 6) {
+		UIImage *image = [UIImage imageNamed:@"toolProjects.png"];
 		cell.imageView.image = image;	
 	}	
+
+	
 	
 	return cell;
 }
@@ -134,6 +150,8 @@
 	int toolIndex = [indexPath indexAtPosition: [indexPath length] - 1];		
 	
 	if (toolIndex == 0) {
+		
+
 		
 	} else if (toolIndex == 1) {
 
@@ -148,15 +166,15 @@
 		[flickrView.navigationItem setRightBarButtonItem:button animated:YES];		
 		
 	} else if (toolIndex == 2) {
-
-		CalcViewController *calcView = [[CalcViewController alloc] init];
-		[self.navigationController pushViewController:calcView animated:YES];
-		 
-		 [calcView release];			
 		
 	} else if (toolIndex == 3) {
 		
 	} else if (toolIndex == 4) {
+
+		CalcViewController *calcView = [[CalcViewController alloc] init];
+		[self.navigationController pushViewController:calcView animated:YES];
+		
+		[calcView release];					
 		
 	} else if (toolIndex == 5) {
 		

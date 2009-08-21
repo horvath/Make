@@ -43,9 +43,9 @@
 		D082ED9010339F4A00B019A0 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D082ED8F10339F4A00B019A0 /* Icon.png */; };
 		D082ED9610339FB700B019A0 /* TalkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D082ED9510339FB700B019A0 /* TalkViewController.m */; };
 		D09B58DD102A0A58000658BC /* toolFlickr.png in Resources */ = {isa = PBXBuildFile; fileRef = D09B58DC102A0A58000658BC /* toolFlickr.png */; };
-		D09B58DF102A0A73000658BC /* toolReference.png in Resources */ = {isa = PBXBuildFile; fileRef = D09B58DE102A0A73000658BC /* toolReference.png */; };
+		D09B58DF102A0A73000658BC /* toolProjects.png in Resources */ = {isa = PBXBuildFile; fileRef = D09B58DE102A0A73000658BC /* toolProjects.png */; };
 		D09B5907102A11BB000658BC /* toolClinometer.png in Resources */ = {isa = PBXBuildFile; fileRef = D09B5906102A11BB000658BC /* toolClinometer.png */; };
-		D09B5921102A13D5000658BC /* toolProjects.png in Resources */ = {isa = PBXBuildFile; fileRef = D09B591F102A13D5000658BC /* toolProjects.png */; };
+		D09B5921102A13D5000658BC /* toolReference.png in Resources */ = {isa = PBXBuildFile; fileRef = D09B591F102A13D5000658BC /* toolReference.png */; };
 		D09B5922102A13D5000658BC /* toolCalculator.png in Resources */ = {isa = PBXBuildFile; fileRef = D09B5920102A13D5000658BC /* toolCalculator.png */; };
 		D09B592F102A1435000658BC /* toolArduino.png in Resources */ = {isa = PBXBuildFile; fileRef = D09B592E102A1435000658BC /* toolArduino.png */; };
 		D0C2C72C103B4DE9008A51BE /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C2C72B103B4DE9008A51BE /* AsyncImageView.m */; };
@@ -54,6 +54,10 @@
 		D0C2C8EC103B7F73008A51BE /* Thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C2C8EB103B7F73008A51BE /* Thumbnail.png */; };
 		D0C2C934103B99BC008A51BE /* BlogDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C2C933103B99BC008A51BE /* BlogDetailViewController.m */; };
 		D0C2C9CB103C9C5D008A51BE /* CalcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C2C9CA103C9C5D008A51BE /* CalcViewController.m */; };
+		D0C2CAB6103DC59B008A51BE /* Indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C2CAB5103DC59B008A51BE /* Indicator.png */; };
+		D0C2CAD6103DCE39008A51BE /* CellBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C2CAD5103DCE39008A51BE /* CellBackground.png */; };
+		D0C2CAE0103DD106008A51BE /* CellBackgroundSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C2CADF103DD106008A51BE /* CellBackgroundSelected.png */; };
+		D0C2CB63103DFFAE008A51BE /* toolNotebook.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C2CB62103DFFAE008A51BE /* toolNotebook.png */; };
 		D0C700051034701D00BAB75D /* NavigationBar.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C700041034701D00BAB75D /* NavigationBar.png */; };
 		D0C70021103473F800BAB75D /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C70020103473F800BAB75D /* VideosViewController.m */; };
 		D0C7FFF510346ECD00BAB75D /* CustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C7FFF410346ECD00BAB75D /* CustomNavigationBar.m */; };
@@ -120,9 +124,9 @@
 		D082ED9410339FB700B019A0 /* TalkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkViewController.h; sourceTree = "<group>"; };
 		D082ED9510339FB700B019A0 /* TalkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkViewController.m; sourceTree = "<group>"; };
 		D09B58DC102A0A58000658BC /* toolFlickr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolFlickr.png; sourceTree = "<group>"; };
-		D09B58DE102A0A73000658BC /* toolReference.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolReference.png; sourceTree = "<group>"; };
+		D09B58DE102A0A73000658BC /* toolProjects.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolProjects.png; sourceTree = "<group>"; };
 		D09B5906102A11BB000658BC /* toolClinometer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolClinometer.png; sourceTree = "<group>"; };
-		D09B591F102A13D5000658BC /* toolProjects.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolProjects.png; sourceTree = "<group>"; };
+		D09B591F102A13D5000658BC /* toolReference.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolReference.png; sourceTree = "<group>"; };
 		D09B5920102A13D5000658BC /* toolCalculator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolCalculator.png; sourceTree = "<group>"; };
 		D09B592E102A1435000658BC /* toolArduino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolArduino.png; sourceTree = "<group>"; };
 		D0C2C72A103B4DE9008A51BE /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
@@ -136,6 +140,10 @@
 		D0C2C933103B99BC008A51BE /* BlogDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogDetailViewController.m; sourceTree = "<group>"; };
 		D0C2C9C9103C9C5D008A51BE /* CalcViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalcViewController.h; sourceTree = "<group>"; };
 		D0C2C9CA103C9C5D008A51BE /* CalcViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalcViewController.m; sourceTree = "<group>"; };
+		D0C2CAB5103DC59B008A51BE /* Indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Indicator.png; sourceTree = "<group>"; };
+		D0C2CAD5103DCE39008A51BE /* CellBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CellBackground.png; sourceTree = "<group>"; };
+		D0C2CADF103DD106008A51BE /* CellBackgroundSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CellBackgroundSelected.png; sourceTree = "<group>"; };
+		D0C2CB62103DFFAE008A51BE /* toolNotebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolNotebook.png; sourceTree = "<group>"; };
 		D0C700041034701D00BAB75D /* NavigationBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavigationBar.png; sourceTree = "<group>"; };
 		D0C7001F103473F800BAB75D /* VideosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosViewController.h; sourceTree = "<group>"; };
 		D0C70020103473F800BAB75D /* VideosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosViewController.m; sourceTree = "<group>"; };
@@ -303,6 +311,9 @@
 		D082ED071033952A00B019A0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D0C2CAB5103DC59B008A51BE /* Indicator.png */,
+				D0C2CAD5103DCE39008A51BE /* CellBackground.png */,
+				D0C2CADF103DD106008A51BE /* CellBackgroundSelected.png */,
 				D082ED091033953A00B019A0 /* Default.png */,
 				D082ED8F10339F4A00B019A0 /* Icon.png */,
 				D0C700041034701D00BAB75D /* NavigationBar.png */,
@@ -334,8 +345,9 @@
 			children = (
 				D09B592E102A1435000658BC /* toolArduino.png */,
 				D09B58DC102A0A58000658BC /* toolFlickr.png */,
-				D09B58DE102A0A73000658BC /* toolReference.png */,
-				D09B591F102A13D5000658BC /* toolProjects.png */,
+				D09B58DE102A0A73000658BC /* toolProjects.png */,
+				D0C2CB62103DFFAE008A51BE /* toolNotebook.png */,
+				D09B591F102A13D5000658BC /* toolReference.png */,
 				D09B5920102A13D5000658BC /* toolCalculator.png */,
 				D09B5906102A11BB000658BC /* toolClinometer.png */,
 			);
@@ -405,9 +417,9 @@
 				D0DFDFE90FE848ED00CF00A7 /* btnSettings.png in Resources */,
 				D0DFE0720FEAB32D00CF00A7 /* tabConnect.png in Resources */,
 				D09B58DD102A0A58000658BC /* toolFlickr.png in Resources */,
-				D09B58DF102A0A73000658BC /* toolReference.png in Resources */,
+				D09B58DF102A0A73000658BC /* toolProjects.png in Resources */,
 				D09B5907102A11BB000658BC /* toolClinometer.png in Resources */,
-				D09B5921102A13D5000658BC /* toolProjects.png in Resources */,
+				D09B5921102A13D5000658BC /* toolReference.png in Resources */,
 				D09B5922102A13D5000658BC /* toolCalculator.png in Resources */,
 				D09B592F102A1435000658BC /* toolArduino.png in Resources */,
 				D03F13B2102DF3A0002A60F2 /* connectTalk.png in Resources */,
@@ -422,6 +434,10 @@
 				D082ED9010339F4A00B019A0 /* Icon.png in Resources */,
 				D0C700051034701D00BAB75D /* NavigationBar.png in Resources */,
 				D0C2C8EC103B7F73008A51BE /* Thumbnail.png in Resources */,
+				D0C2CAB6103DC59B008A51BE /* Indicator.png in Resources */,
+				D0C2CAD6103DCE39008A51BE /* CellBackground.png in Resources */,
+				D0C2CAE0103DD106008A51BE /* CellBackgroundSelected.png in Resources */,
+				D0C2CB63103DFFAE008A51BE /* toolNotebook.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
